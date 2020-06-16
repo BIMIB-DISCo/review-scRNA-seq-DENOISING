@@ -1,7 +1,7 @@
 # review-scRNA-seq-DENOISING
 
 This repository contains the source code that was used for the paper
-*A review of computational strategies for denoisingand imputation of
+*A review of computational strategies for denoising and imputation of
 single-cell transcriptomic data.*
 
 
