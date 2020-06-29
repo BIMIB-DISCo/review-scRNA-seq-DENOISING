@@ -8,12 +8,12 @@ outdir = working_dir
 
 if(!dir.exists(outdir)){dir.create(outdir, recursive = T)}
 
-if(!dir.exists(paste0(outdir, "final_GT/figures/"))) {
-  dir.create(paste0(outdir, "final_GT/figures/"), recursive = T)
+if(!dir.exists(paste0(outdir, "ground_truth/figures/"))) {
+  dir.create(paste0(outdir, "ground_truth/figures/"), recursive = T)
 }
 
-if(!dir.exists(paste0(outdir, "final_GT/rdata/"))) {
-  dir.create(paste0(outdir, "final_GT/rdata/"), recursive = T)
+if(!dir.exists(paste0(outdir, "ground_truth/rdata/"))) {
+  dir.create(paste0(outdir, "ground_truth/rdata/"), recursive = T)
 }
 
 source("tmp_functions.R")
@@ -52,16 +52,16 @@ foreach(pop=n_pop, .combine=cbind,
   fileN = paste0("GT_", pop, "_pop")
   saveRDS(object=to_study, 
           file=paste0(outdir, 
-                      "final_GT/rdata/", 
+                      "ground_truth/rdata/", 
                       fileN,
                       ".rds"))
   tmp_so <- summarizedToSeurat(to_study)
   clustering_result = calculate_clustering(tmp_so)
   
-  ggsave(paste0(outdir, "final_GT/figures/", fileN, "_TPOP.png"), 
+  ggsave(paste0(outdir, "ground_truth/figures/", fileN, "_TPOP.png"), 
          plot = clustering_result$plotPop, 
          dpi = 500)
-  ggsave(paste0(outdir, "final_GT/figures/", fileN, "_TCLUS.png"), 
+  ggsave(paste0(outdir, "ground_truth/figures/", fileN, "_TCLUS.png"), 
          plot = clustering_result$plotCluster, 
          dpi = 500)
   }

@@ -14,8 +14,12 @@ and extract them in the local folder that contains this
 repository. After downloading all files, you will have the following
 folders:
 
+- **`ground_truth`**: this folder contains the rds files with the datasets
+  used as ground truth. 
+
 - **`final_GT`**: this folder contains the rds files with the datasets
-  used as ground truth.
+  used as ground truth, respectively for UMI and nonUMI simulations. It
+  contains the down-sampled datasets from folder **`ground_truth`**.
 
 - **`noise_mixed`**: this folder contains the rds files with the full
   datasets with noise.

@@ -58,13 +58,13 @@ calculate_clustering <- function(tmp_so, res = "default", clustering_performance
                reduction = "tsne", 
                group.by = "pop", 
                label = T, 
-               pt.size = 1.0, 
-               do.return=T)
+               pt.size = 1.0)
+               #do.return=T)
   p2 = DimPlot(tmp_so, 
                reduction = "tsne", 
                label = T, 
-               pt.size = 1.0, 
-               do.return=T)
+               pt.size = 1.0) 
+               #do.return=T)
   
   trueLab = unlist(tmp_so@meta.data$pop)
   if (clustering_performances) {
